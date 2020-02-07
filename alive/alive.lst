@@ -19,16 +19,16 @@
     16 00000009 BF01000000                  mov		rdi, 1			; 1 = to stdout
     17 0000000E 48BE-                       mov		rsi, msg1		; string to display
     17 00000010 [0000000000000000] 
-    18                                  ;   mov		rdx, msg1Len	; length of the string
-    19 00000018 0F05                        syscall					; display the string
-    20 0000001A B801000000                  mov		rax, 1			; 1 = write
-    21 0000001F BF01000000                  mov		rdi, 1			; 1 = to stdout
-    22 00000024 48BE-                       mov		rsi, msg2		; string to display
-    22 00000026 [0F00000000000000] 
-    23                                  ;   mov		rdx, msg2Len	; length of the string
-    24 0000002E 0F05                        syscall					; display the string
-    25 00000030 4889EC                  	mov 	rsp,rbp			; function epilogue
-    26 00000033 5D                      	pop 	rbp				; function epilogue
-    27 00000034 B83C000000                  mov		rax, 60			; 60 = exit
-    28 00000039 BF00000000                  mov		rdi, 0			; 0 = success exit code
-    29 0000003E 0F05                        syscall					; quit
+    18 00000018 BA0E000000                  mov		rdx, msg1Len	; length of the string
+    19 0000001D 0F05                        syscall					; display the string
+    20 0000001F B801000000                  mov		rax, 1			; 1 = write
+    21 00000024 BF01000000                  mov		rdi, 1			; 1 = to stdout
+    22 00000029 48BE-                       mov		rsi, msg2		; string to display
+    22 0000002B [0F00000000000000] 
+    23 00000033 BA13000000                  mov		rdx, msg2Len	; length of the string
+    24 00000038 0F05                        syscall					; display the string
+    25 0000003A 4889EC                  	mov 	rsp,rbp			; function epilogue
+    26 0000003D 5D                      	pop 	rbp				; function epilogue
+    27 0000003E B83C000000                  mov		rax, 60			; 60 = exit
+    28 00000043 BF00000000                  mov		rdi, 0			; 0 = success exit code
+    29 00000048 0F05                        syscall					; quit
